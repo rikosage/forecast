@@ -7,9 +7,6 @@
   <title><?php echo View::$title; ?></title>
 </head>
 <body>
-<pre>
-  <?php // print_r(WeatherController::$forecast->day) ?>
-</pre>
   <div class="wrapper fluid-container">
     <div class="row">
       <div class="col-lg-3 text-left">
@@ -26,23 +23,85 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 text-center bg-primary">Утро</div>
-      <div class="col-lg-3 text-center bg-primary">День</div>
-      <div class="col-lg-3 text-center bg-primary">Вечер</div>
-      <div class="col-lg-3 text-center bg-primary">Ночь</div>
+      <div class="col-lg-1 col-lg-offset-1 text-left"></div>
+      <div class="col-lg-2 text-center bg-primary">Утро</div>
+      <div class="col-lg-2 text-center bg-primary">День</div>
+      <div class="col-lg-2 text-center bg-primary">Вечер</div>
+      <div class="col-lg-2 text-center bg-primary">Ночь</div>
     </div>
     <div class="row">
-      <div class="col-lg-3 text-center bg-info">
-        <span><?php echo WeatherController::$forecast->day->day_part[0]->temperature_to; ?></span> 
+    <div class="col-lg-1 col-lg-offset-1 text-left">Температура</div>
+      <div class="col-lg-2 text-center bg-info">
+        <span><?php echo WeatherController::$forecast->day->day_part[0]->{'temperature-data'}->avg; ?></span> 
       </div>
-      <div class="col-lg-3 text-center bg-info">
-        <span><?php echo WeatherController::$forecast->day->day_part[1]->temperature_to; ?></span> 
+      <div class="col-lg-2 text-center bg-info">
+        <span><?php echo WeatherController::$forecast->day->day_part[1]->{'temperature-data'}->avg; ?></span> 
       </div>
-      <div class="col-lg-3 text-center bg-info">
-        <span><?php echo WeatherController::$forecast->day->day_part[2]->temperature; ?></span> 
+      <div class="col-lg-2 text-center bg-info">
+        <span><?php echo WeatherController::$forecast->day->day_part[2]->{'temperature-data'}->avg; ?></span> 
       </div>
-      <div class="col-lg-3 text-center bg-info">
-        <span><?php echo WeatherController::$forecast->day->day_part[3]->temperature_to; ?></span> 
+      <div class="col-lg-2 text-center bg-info">
+        <span><?php echo WeatherController::$forecast->day->day_part[3]->{'temperature-data'}->avg; ?></span> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1 col-lg-offset-1 text-left">Тип</div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[0]->weather_type; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[1]->weather_type; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[2]->weather_type; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[3]->weather_type; ?>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1 col-lg-offset-1 text-left">Ветер (м\с)</div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[0]->wind_speed; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[1]->wind_speed; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[2]->wind_speed; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[3]->wind_speed; ?>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1 col-lg-offset-1 text-left">Давление</div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[0]->pressure; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[1]->pressure; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[2]->pressure; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[3]->pressure; ?>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1 col-lg-offset-1 text-left">Влажность</div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[0]->humidity; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[1]->humidity; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[2]->humidity; ?>
+      </div>
+      <div class="col-lg-2 text-center bg-info">
+        <?php echo WeatherController::$forecast->day->day_part[3]->humidity; ?>
       </div>
     </div>
   </div>
