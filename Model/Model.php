@@ -16,10 +16,24 @@ class Model
   	return json_encode(self::$data);
   }
 
-  public static function getXmlData($url)
+  public static function getObjectData($url)
   {
   	self::$url = $url;
   	self::parseData(); 
+  	return self::$data;
+  }
+
+  public static function getArrayData($url)
+  {
+  	self::$url = $url;
+  	self::parseData(); 
+  	return (array)self::$data;
+  }
+
+  public static function getXmlData($url)
+  {
+  	self::$url = $url;
+  	self::$data = file_get_contents($url);
   	return self::$data;
   }
 

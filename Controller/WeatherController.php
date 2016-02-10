@@ -3,6 +3,8 @@
 class WeatherController extends Controller
 {
 
+  public static $forecast;
+
   public static function setTitle($title)
   {
     View::$title = $title;
@@ -10,8 +12,8 @@ class WeatherController extends Controller
 
   public static function getForecast($url)
   {
-    $forecast = parent::getXmlData($url);
-    View::getView($forecast);
+    self::$forecast = parent::getObjectData($url);
+    View::getView("forecast");
   }
 
 }
