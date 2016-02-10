@@ -15,7 +15,9 @@
       </div>
       <div class="col-lg-6 text-center">
         <h1>Погода в <?php echo WeatherController::$forecast->attributes()->part . 
-        ", " . WeatherController::$forecast->attributes()->city; ?></h1>
+        ", " . WeatherController::$forecast->attributes()->city; ?> на <br><br>
+        <span class = "date bg-success"><?php echo date("d F Y | G:i"); ?></span>
+        </h1>
       </div>
       <div class="col-lg-3 text-left">
         <div class="col-lg-12">Луна появляется: <span><?php echo WeatherController::$forecast->day->moonrise ?></span></div>

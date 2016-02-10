@@ -3,6 +3,11 @@
 class Controller
 {
 
+  public static function setTitle($title)
+  {
+    View::$title = $title;
+  }
+
   public static function getObjectData($url)
   {
     return Model::getObjectData($url);
